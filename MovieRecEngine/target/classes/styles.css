@@ -1,0 +1,139 @@
+/* Root styling */
+.root {
+    -fx-background-color: #f3f2f1;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* App title */
+.app-title {
+    -fx-text-fill: #323130;
+    -fx-font-weight: semi-bold;
+    -fx-font-size: 20px;
+}
+
+/* Movie cards */
+.movie-card-enhanced {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e1dfdd;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 4, 0.2, 0, 2);
+    -fx-padding: 12px;
+    -fx-spacing: 6px;
+}
+
+.movie-card-enhanced:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0.3, 0, 3);
+    -fx-cursor: hand;
+}
+
+.sort-order-button {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px 16px;
+}
+
+.sort-order-button:hover {
+    -fx-background-color: #106ebe;
+}
+
+/* Genre badges */
+.genre-badge {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 4px 10px;
+    -fx-font-size: 12px;
+    -fx-font-weight: semi-bold;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-font-size: 13px;
+    -fx-font-weight: semi-bold;
+    -fx-cursor: hand;
+    -fx-border-width: 0px;
+}
+
+.button:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.action-button-primary {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+}
+
+.action-button-primary:hover {
+    -fx-background-color: #106ebe;
+}
+
+.action-button-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0078d4;
+    -fx-border-color: #0078d4;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+
+.action-button-secondary:hover {
+    -fx-background-color: #e5f1fb;
+}
+
+/* Text fields */
+.text-field, .search-field {
+    -fx-background-color: white;
+    -fx-border-color: #c8c6c4;
+    -fx-border-radius: 4px;
+    -fx-padding: 10px 14px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .search-field:focused {
+    -fx-border-color: #0078d4;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,120,212,0.2), 4, 0.2, 0, 0);
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #c8c6c4;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px 12px;
+}
+
+.combo-box:showing {
+    -fx-border-color: #0078d4;
+}
+
+/* Slider */
+.slider .thumb {
+    -fx-background-color: #0078d4;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-background-radius: 8px;
+}
+
+.slider .track {
+    -fx-background-color: #e1dfdd;
+}
+
+
+
+/* ListView */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #c8c6c4;
+    -fx-border-radius: 4px;
+}
+
+.list-cell:selected {
+    -fx-background-color: #e5f1fb;
+    -fx-text-fill: #0078d4;
+}

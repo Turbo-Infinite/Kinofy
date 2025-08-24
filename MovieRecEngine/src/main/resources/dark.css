@@ -1,0 +1,384 @@
+/* Enhanced Movie Recommendation App - Dark Theme */
+
+/* Root styling */
+.root {
+    -fx-background-color: #1b1a19;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.app-title {
+    -fx-text-fill: #f3f2f1;
+    -fx-font-weight: semi-bold;
+    -fx-font-size: 20px;
+}
+
+/* Enhanced movie cards */
+.movie-card-enhanced {
+    -fx-background-color: #252423;
+    -fx-background-radius: 8px;
+    -fx-border-color: #3b3a39;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 0, 2);
+}
+
+.movie-card-enhanced:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.15), 12, 0.4, 0, 4);
+    -fx-cursor: hand;
+}
+
+/* Genre badges */
+.genre-badge {
+    -fx-background-color: linear-gradient(to right, #8b9be8, #a788e1);
+    -fx-text-fill: #121212;
+    -fx-background-radius: 15px;
+    -fx-padding: 4px 12px;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Filter panel styling */
+.filter-panel {
+    -fx-background-color: #1e1e1e;
+    -fx-background-radius: 15px;
+    -fx-border-color: #333;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.05), 6, 0.2, 0, 2);
+    -fx-padding: 20px;
+}
+
+/* Search field styling */
+.search-field {
+    -fx-background-color: #1f1f1f;
+        -fx-border-color: #3b3a39;
+        -fx-border-radius: 4px;
+        -fx-background-radius: 4px;
+        -fx-text-fill: #f3f2f1;
+        -fx-prompt-text-fill: #c8c6c4;
+        -fx-font-size: 14px;
+        -fx-padding: 10px 14px;
+
+
+}
+
+.search-field:focused {
+    -fx-border-color: #0078d4;
+        -fx-effect: dropshadow(gaussian, rgba(0,120,212,0.2), 4, 0.2, 0, 0);
+
+}
+
+/* Button styling */
+.button {
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-width: 0px;
+}
+
+.button:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* Primary buttons */
+.action-button-primary {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: #ffffff;
+}
+
+.action-button-primary:hover {
+    -fx-background-color: #106ebe;
+}
+
+/* Secondary buttons */
+..action-button-secondary {
+     -fx-background-color: transparent;
+     -fx-text-fill: #8a8cd9;
+     -fx-border-color: #8a8cd9;
+     -fx-border-radius: 4px;
+ }
+
+ .action-button-secondary:hover {
+     -fx-background-color: #2b2b2b;
+ }
+
+/* Danger buttons */
+.action-button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e74c3c;
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.action-button-danger:hover {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: #121212;
+}
+
+/* Quick filter buttons */
+.quick-filter-button {
+    -fx-background-color: #242424;
+    -fx-text-fill: #8b9be8;
+    -fx-border-color: #8b9be8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 12px;
+}
+
+.quick-filter-button:selected {
+    -fx-background-color: #8b9be8;
+    -fx-text-fill: #121212;
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: #252423;
+        -fx-border-color: #3b3a39;
+        -fx-border-radius: 4px;
+        -fx-text-fill: #f3f2f1;
+        -fx-padding: 8px 12px;
+}
+
+.combo-box:showing {
+
+    -fx-border-color: #0078d4;
+    -fx-border-width: 2px;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #0078d4;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #8b9be8;
+}
+
+/* Text field styling */
+.text-field {
+    -fx-background-color: #1f1f1f;
+        -fx-border-color: #3b3a39;
+        -fx-border-radius: 4px;
+        -fx-background-radius: 4px;
+        -fx-text-fill: #f3f2f1;
+        -fx-prompt-text-fill: #c8c6c4;
+        -fx-font-size: 14px;
+        -fx-padding: 10px 14px;
+
+
+}
+
+.sort-order-button {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px 16px;
+}
+
+.sort-order-button:hover {
+    -fx-background-color: #106ebe;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #252423; /* Same as combo box background */
+    -fx-text-fill: #f3f2f1; /* A light, visible color for the text */
+}
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: #3b3a39; /* A slightly different background color on hover */
+    -fx-text-fill: #f3f2f1;
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: #0078d4; /* The primary action color for selected items */
+    -fx-text-fill: #ffffff; /* White text for better contrast on the selected item */
+}
+
+.add-movie-panel {
+    -fx-background-color: #252423;
+    -fx-border-color: #3b3a39;
+    -fx-border-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 0, 2);
+}
+
+.text-field:focused {
+    -fx-border-color: #0078d4;
+        -fx-effect: dropshadow(gaussian, rgba(0,120,212,0.2), 4, 0.2, 0, 0);
+
+}
+
+/* Slider styling */
+.slider {
+    -fx-padding: 10px 0px;
+}
+
+.slider .track {
+    -fx-background-color: #3b3a39;
+}
+
+.slider .thumb {
+    -fx-background-color: #0078d4;
+        -fx-border-color: #1b1a19;
+        -fx-border-width: 2px;
+        -fx-background-radius: 8px;
+
+}
+
+.slider .thumb:pressed {
+    -fx-background-color: #7a8ede;
+}
+
+/* Progress indicator styling */
+.progress-indicator {
+    -fx-progress-color: #8b9be8;
+    -fx-accent: #8b9be8;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: transparent;
+}
+
+/* ListView styling */
+.list-view {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #555;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 12px;
+}
+
+.list-cell:selected {
+    -fx-background-color: rgba(139, 155, 232, 0.1);
+    -fx-text-fill: #8b9be8;
+}
+
+/* ScrollPane styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+/* Scrollbar styling */
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #555;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #888;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Separator styling */
+.separator .line {
+    -fx-border-color: #333;
+    -fx-border-width: 0.5px 0 0 0;
+}
+
+/* Tooltip styling */
+.tooltip {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-text-fill: #121212;
+    -fx-background-radius: 6px;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 10px;
+}
+
+.add-movie-panel {
+    -fx-background-color: #1e1e1e;
+    -fx-background-radius: 15px;
+    -fx-border-color: #333;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.05), 5, 0, 0, 2);
+}
+
+/* Alert dialog styling */
+.alert {
+    -fx-background-color: #242424;
+}
+
+.alert .header-panel {
+    -fx-background-color: #1a1a1a;
+}
+
+.alert .content {
+    -fx-text-fill: #f0f0f0;
+}
+
+.alert .button-bar .button {
+    -fx-background-color: #8b9be8;
+    -fx-text-fill: #121212;
+    -fx-background-radius: 6px;
+}
+
+/* Animation classes for smooth transitions */
+.fade-in {
+    -fx-opacity: 0;
+}
+
+.fade-in-active {
+    -fx-opacity: 1;
+}
+
+/* Responsive design helpers */
+@media (max-width: 1200px) {
+    .movie-card-enhanced {
+        -fx-background-color: #252423; /* Fluent dark neutral */
+        -fx-border-color: #3b3a39;
+        -fx-border-radius: 8px;
+        -fx-background-radius: 8px;
+        -fx-padding: 15px;
+        -fx-spacing: 10px;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0.3, 0, 2);
+    }
+
+}
+
+@media (max-width: 800px) {
+    .movie-card-enhanced {
+        -fx-background-color: #252423; /* Fluent dark neutral */
+        -fx-border-color: #3b3a39;
+        -fx-border-radius: 8px;
+        -fx-background-radius: 8px;
+        -fx-padding: 15px;
+        -fx-spacing: 10px;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0.3, 0, 2);
+    }
+
+
+    .app-title {
+        -fx-font-size: 20px;
+    }
+}
