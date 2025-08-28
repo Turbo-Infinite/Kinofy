@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d59c2e34-c5bd-452a-bc8a-1cbb9e552837" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/data/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/data/MovieDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/Recommender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/Recommender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/model/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MainUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MainUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MovieCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MovieCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/night_always_comes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/data/MovieDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/data/MovieDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/logic/Recommender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/logic/Recommender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/model/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/model/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MovieCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MovieCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/night_always_comes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/movies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/movies.csv" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="31be7CBJKdZcuVtW0hr8jPXceyb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MovieRecEngine.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/Asus/OneDrive/Documents/Projects/MovieRecEngine/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MovieRecEngine" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-24" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.mayank.movierec.MainApp" />
+      <module name="MovieRecEngine" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\javafx-sdk-24.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d59c2e34-c5bd-452a-bc8a-1cbb9e552837" name="Changes" comment="" />
+      <created>1755797030821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755797030821</updated>
+    </task>
+    <servers />
+  </component>
+</project>

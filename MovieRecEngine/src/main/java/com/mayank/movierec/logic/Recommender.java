@@ -16,7 +16,7 @@ public class Recommender {
                     String title = parts[0].trim();
                     String genre = parts[1].trim();
                     double rating = Double.parseDouble(parts[2].trim());
-                    movies.add(new Movie(title, genre, rating));
+                    movies.add(new Movie(title, genre, rating,null));
                 }
             }
         } catch (IOException e) {

@@ -204,7 +204,7 @@ public class MainUI {
             Task<Void> addMovieTask = new Task<>() {
                 @Override
                 protected Void call() throws Exception {
-                    Movie newMovie = new Movie(title, genre, rating);
+                    Movie newMovie = new Movie(title, genre, rating,null);
                     db.addMovie(newMovie);
                     return null;
                 }

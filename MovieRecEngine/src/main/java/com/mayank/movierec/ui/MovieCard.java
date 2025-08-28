@@ -50,6 +50,31 @@ public class MovieCard extends VBox {
 
     private void createContent() {
 
+        ImageView posterView = new ImageView();
+        posterView.setFitWidth(250);
+        posterView.setFitHeight(375); // Standard movie poster aspect ratio
+
+        // Placeholder for when a poster is not available
+        Image placeholderImage = new Image(getClass().getResourceAsStream("/images/placeholder.png"));
+
+        // Construct the full image URL and load the image
+        if (movie.getPosterPath() != null && !movie.getPosterPath().isEmpty()) {
+            String imageUrl = "https://image.tmdb.org/t/p/w500" + movie.getPosterPath();
+            Image posterImage = new Image(imageUrl, true); // true enables background loading
+
+            posterImage.progressProperty().addListener((obs, oldVal, newVal) -> {
+                if (newVal.doubleValue() >= 1.0) {
+                    if (posterImage.isError()) {
+                        posterView.setImage(placeholderImage);
+                    } else {
+                        posterView.setImage(posterImage);
+                    }
+                }
+            });
+        } else {
+            // Set the placeholder if no poster path is available
+            posterView.setImage(placeholderImage);
+        }
 
         // Title
         Label titleLabel = new Label(movie.getTitle());
@@ -82,6 +107,7 @@ public class MovieCard extends VBox {
 
         VBox contentBox = new VBox(8);
         contentBox.getChildren().addAll(
+                posterView,
                 topRow,
                 titleLabel,
                 ratingBox
