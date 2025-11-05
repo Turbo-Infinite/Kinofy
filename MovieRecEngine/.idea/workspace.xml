@@ -4,24 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59c2e34-c5bd-452a-bc8a-1cbb9e552837" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d59c2e34-c5bd-452a-bc8a-1cbb9e552837" name="Changes" comment=".s">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/NlpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/EditMovieDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/ImageEmotionSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/TimelineView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/Toast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/NotoColorEmoji-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/angry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/happy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/laughing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/sad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/shocked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/emojis/thinking.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons/genre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons/quick_filters.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons/rating.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons/sort.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/data/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/data/MovieDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/Recommender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/Recommender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/TmdbApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/logic/TmdbApiClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/model/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MainUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MainUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MovieCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/MovieCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/night_always_comes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/AdvancedFilterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/AdvancedFilterPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/EmptyStateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/EmptyStateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/MovieDetailDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mayank/movierec/ui/components/MovieDetailDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/godfather.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/green_mile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/hereditary.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/inception.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/interstellar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/minecraft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/parasite.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/the_dark_knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/MainApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/data/MovieDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/data/MovieDatabase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/logic/Recommender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/logic/Recommender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/model/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/model/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MainUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MovieCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/MovieCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/night_always_comes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/movies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/movies.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/AdvancedFilterPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/AdvancedFilterPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/EmptyStateView$EmptyStateType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/EmptyStateView$EmptyStateType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/EmptyStateView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mayank/movierec/ui/components/EmptyStateView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/godfather.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/green_mile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/hereditary.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/inception.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/interstellar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/minecraft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/parasite.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/the_dark_knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +86,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -46,20 +97,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MovieRecEngine.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/Asus/OneDrive/Documents/Projects/MovieRecEngine/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MovieRecEngine.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Asus/OneDrive/Documents/Projects/MovieRecEngine/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\OneDrive\Documents\Projects\MovieRecEngine\src\main\resources\images\icons" />
+      <recent name="C:\Users\Asus\OneDrive\Documents\Projects\MovieRecEngine\src\main\resources\images" />
+      <recent name="C:\Users\Asus\OneDrive\Documents\Projects\MovieRecEngine\src\main\resources\emojis" />
+      <recent name="C:\Users\Asus\OneDrive\Documents\Projects\MovieRecEngine\src\main\resources\fonts" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MovieRecEngine" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-24" />
@@ -80,6 +141,58 @@
       <option name="presentableId" value="Default" />
       <updated>1755797030821</updated>
     </task>
+    <task id="LOCAL-00001" summary="git commit -m &quot;Dark_Title&quot;">
+      <option name="closed" value="true" />
+      <created>1759815137703</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759815137703</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Radius">
+      <option name="closed" value="true" />
+      <created>1759815172923</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759815172923</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TMDB">
+      <option name="closed" value="true" />
+      <created>1759983420776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759983420776</updated>
+    </task>
+    <task id="LOCAL-00004" summary=".s">
+      <option name="closed" value="true" />
+      <created>1759983464925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759983464925</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sudden Change to back" />
+    <MESSAGE value="git commit -m &quot;Dark_Title&quot;" />
+    <MESSAGE value="Radius" />
+    <MESSAGE value="TMDB" />
+    <MESSAGE value=".s" />
+    <option name="LAST_COMMIT_MESSAGE" value=".s" />
   </component>
 </project>

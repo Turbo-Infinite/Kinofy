@@ -1,6 +1,7 @@
 package com.mayank.movierec.ui;
 
 import com.mayank.movierec.model.Movie;
+import com.mayank.movierec.ui.components.MovieDetailDialog;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,14 +11,21 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MovieCard extends VBox {
     private final Movie movie;
     private Runnable onEditCallback;
     private Runnable onDeleteCallback;
+    private final ImageView posterView;
+
+
+    private static final Map<String, Image> imageCache = new HashMap<>();
 
     public MovieCard(Movie movie) {
         this(movie, null, null);
@@ -28,9 +36,27 @@ public class MovieCard extends VBox {
         this.movie = movie;
         this.onEditCallback = onEditCallback;
         this.onDeleteCallback = onDeleteCallback;
+        this.posterView = new ImageView();
+        this.posterView.setFitWidth(250);
+        this.posterView.setFitHeight(375);
 
         setupCard();
         createContent();
+        loadImage();
+    }
+
+    private Image getImageFromCache(String imageUrl) {
+        if (imageCache.containsKey(imageUrl)) {
+            return imageCache.get(imageUrl);
+        } else {
+            Image image = new Image(imageUrl, true);
+            image.progressProperty().addListener((obs, oldVal, newVal) -> {
+                if (newVal.doubleValue() >= 1.0 && !image.isError()) {
+                    imageCache.put(imageUrl, image);
+                }
+            });
+            return image;
+        }
     }
 
     private void setupCard() {
@@ -40,46 +66,21 @@ public class MovieCard extends VBox {
         this.setPrefWidth(280);
 
         // Add shadow effect and rounded corners via CSS
-        this.setStyle("""
-            -fx-background-color: white;
-            -fx-background-radius: 12;
-            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);
-            -fx-border-radius: 12;
-            """);
     }
 
     private void createContent() {
 
-        ImageView posterView = new ImageView();
-        posterView.setFitWidth(250);
-        posterView.setFitHeight(375); // Standard movie poster aspect ratio
+         // Standard movie poster aspect ratio
 
         // Placeholder for when a poster is not available
         Image placeholderImage = new Image(getClass().getResourceAsStream("/images/placeholder.png"));
-
         // Construct the full image URL and load the image
-        if (movie.getPosterPath() != null && !movie.getPosterPath().isEmpty()) {
-            String imageUrl = "https://image.tmdb.org/t/p/w500" + movie.getPosterPath();
-            Image posterImage = new Image(imageUrl, true); // true enables background loading
 
-            posterImage.progressProperty().addListener((obs, oldVal, newVal) -> {
-                if (newVal.doubleValue() >= 1.0) {
-                    if (posterImage.isError()) {
-                        posterView.setImage(placeholderImage);
-                    } else {
-                        posterView.setImage(posterImage);
-                    }
-                }
-            });
-        } else {
-            // Set the placeholder if no poster path is available
-            posterView.setImage(placeholderImage);
-        }
 
         // Title
         Label titleLabel = new Label(movie.getTitle());
         titleLabel.setFont(Font.font("System", FontWeight.BOLD, 16));
-        titleLabel.setTextFill(Color.web("#2c3e50"));
+        titleLabel.setTextFill(Color.web("#6340CF"));
         titleLabel.setWrapText(true);
         titleLabel.setMaxWidth(250);
 
@@ -87,7 +88,7 @@ public class MovieCard extends VBox {
         Label genreLabel = new Label(movie.getGenre());
         genreLabel.getStyleClass().add("genre-badge");
         genreLabel.setStyle("""
-            -fx-background-color: #3498db;
+            -fx-background-color: #6340cf;
             -fx-text-fill: white;
             -fx-background-radius: 15;
             -fx-padding: 4 12 4 12;
@@ -114,9 +115,52 @@ public class MovieCard extends VBox {
         );
 
         this.getChildren().addAll(contentBox, actionButtons);
+    }
+    public void loadImage() {
+        Image placeholderImage = new Image(getClass().getResourceAsStream("/images/placeholder.png"));
+        this.posterView.setImage(placeholderImage);
 
-        // Add hover effects
-        setupHoverEffects();
+        String posterPath = movie.getPosterPath();
+
+        if (posterPath != null && !posterPath.isEmpty()) {
+            Image posterImage;
+            // --- THIS IS THE NEW LOGIC ---
+            // Check if the path is a web URL or a local file path
+            if (posterPath.startsWith("http") || posterPath.startsWith("/")) {
+                // It's a web URL from TMDb
+                String imageUrl = posterPath.startsWith("http") ? posterPath : "https://image.tmdb.org/t/p/w185" + posterPath;
+
+                if (imageCache.containsKey(imageUrl)) {
+                    posterView.setImage(imageCache.get(imageUrl));
+                    return;
+                }
+                posterImage = new Image(imageUrl, true);
+            } else {
+                // It's a local file path from our posters directory
+                try {
+                    posterImage = new Image(new File(posterPath).toURI().toString(), true);
+                } catch (Exception e) {
+                    System.err.println("Error loading local poster: " + posterPath);
+                    e.printStackTrace();
+                    return; // Stop if the local file can't be loaded
+                }
+            }
+            // --- END OF NEW LOGIC ---
+
+            posterImage.progressProperty().addListener((obs, oldVal, newVal) -> {
+                if (newVal.doubleValue() >= 1.0) {
+                    if (posterImage.isError()) {
+                        System.err.println("Failed to load image for: " + movie.getTitle());
+                    } else {
+                        posterView.setImage(posterImage);
+                        // Cache web images, no need to cache local files
+                        if (posterPath.startsWith("http") || posterPath.startsWith("/")) {
+                            imageCache.put(posterPath, posterImage);
+                        }
+                    }
+                }
+            });
+        }
     }
 
 
@@ -127,7 +171,7 @@ public class MovieCard extends VBox {
             case "drama" -> Color.web("#9b59b6");
             case "horror" -> Color.web("#2c3e50");
             case "romance" -> Color.web("#e91e63");
-            case "sci-fi", "science fiction" -> Color.web("#3498db");
+            case "sci-fi", "science fiction" -> Color.web("#6340cf");
             case "thriller" -> Color.web("#34495e");
             case "animation" -> Color.web("#1abc9c");
             default -> Color.web("#95a5a6");
@@ -179,42 +223,15 @@ public class MovieCard extends VBox {
 
         Button viewButton = new Button("View");
         viewButton.getStyleClass().add("action-button-primary");
-        viewButton.setStyle("""
-            -fx-background-color: #3498db;
-            -fx-text-fill: white;
-            -fx-background-radius: 6;
-            -fx-padding: 6 12 6 12;
-            -fx-font-size: 11px;
-            -fx-cursor: hand;
-            """);
+
 
         Button editButton = new Button("Edit");
         editButton.getStyleClass().add("action-button-secondary");
-        editButton.setStyle("""
-            -fx-background-color: transparent;
-            -fx-text-fill: #3498db;
-            -fx-border-color: #3498db;
-            -fx-border-width: 1;
-            -fx-background-radius: 6;
-            -fx-border-radius: 6;
-            -fx-padding: 6 12 6 12;
-            -fx-font-size: 11px;
-            -fx-cursor: hand;
-            """);
+
 
         Button deleteButton = new Button("Delete");
         deleteButton.getStyleClass().add("action-button-danger");
-        deleteButton.setStyle("""
-            -fx-background-color: transparent;
-            -fx-text-fill: #e74c3c;
-            -fx-border-color: #e74c3c;
-            -fx-border-width: 1;
-            -fx-background-radius: 6;
-            -fx-border-radius: 6;
-            -fx-padding: 6 12 6 12;
-            -fx-font-size: 11px;
-            -fx-cursor: hand;
-            """);
+
 
         // Add tooltips
         viewButton.setTooltip(new Tooltip("View movie details"));
@@ -235,34 +252,13 @@ public class MovieCard extends VBox {
         return buttonBox;
     }
 
-    private void setupHoverEffects() {
-        this.setOnMouseEntered(e -> {
-            this.setStyle("""
-                -fx-background-color: white;
-                -fx-background-radius: 12;
-                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0, 0, 4);
-                -fx-border-radius: 12;
-                -fx-scale-x: 1.02;
-                -fx-scale-y: 1.02;
-                """);
-        });
 
-        this.setOnMouseExited(e -> {
-            this.setStyle("""
-                -fx-background-color: white;
-                -fx-background-radius: 12;
-                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);
-                -fx-border-radius: 12;
-                -fx-scale-x: 1.0;
-                -fx-scale-y: 1.0;
-                """);
-        });
-    }
 
     private void showMovieDetails() {
         // This will be implemented when we create the details dialog
-        System.out.println("Showing details for: " + movie.getTitle());
-        // TODO: Open detailed view dialog
+        MovieDetailDialog dialog = new MovieDetailDialog(movie); // Pass the movie object
+        dialog.getDialogPane().getStylesheets().addAll(this.getScene().getStylesheets());
+        dialog.showAndWait();
     }
 
     // Getters

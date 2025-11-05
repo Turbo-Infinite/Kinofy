@@ -1,7 +1,7 @@
 package com.mayank.movierec.model;
 
 
-
+import java.time.LocalDate;
 import java.util.Objects;
 
 
@@ -16,9 +16,12 @@ public class Movie {
 
     private final String posterPath; // Add this field
 
+    private final String emotions;
+    private final String notes;
+    private final String tags;
+    private final LocalDate dateTagged;
 
-
-    public Movie(String title, String genre, double rating, String posterPath) {
+    public Movie(String title, String genre, double rating, String posterPath, String emotions,String notes, String tags, LocalDate dateTagged) {
 
         this.title = title.trim();
 
@@ -28,6 +31,10 @@ public class Movie {
 
         this.posterPath = posterPath; // Initialize the new field
 
+        this.emotions = emotions != null ? emotions.trim() : "";
+        this.notes = notes != null ? notes.trim() : "";
+        this.tags = tags != null ? tags.trim() : "";
+        this.dateTagged = dateTagged;
     }
 
 
@@ -40,7 +47,10 @@ public class Movie {
 
     public String getPosterPath() { return posterPath; } // Add this getter
 
-
+    public String getEmotions() { return emotions; }
+    public String getNotes() { return notes; }
+    public String getTags() { return tags; }
+    public LocalDate getDateTagged() { return dateTagged; }
 
     @Override
 
@@ -68,7 +78,12 @@ public class Movie {
 
                 genre.equals(movie.genre) &&
 
-                Objects.equals(posterPath, movie.posterPath); // Include posterPath in equals check
+                Objects.equals(posterPath, movie.posterPath)&& // Include posterPath in equals check
+
+                Objects.equals(emotions, movie.emotions)&&
+                Objects.equals(tags, movie.tags)&&
+                Objects.equals(dateTagged, movie.dateTagged);
+
 
     }
 
@@ -78,7 +93,7 @@ public class Movie {
 
     public int hashCode() {
 
-        return Objects.hash(title, genre, rating, posterPath);
+        return Objects.hash(title, genre, rating, posterPath, emotions, tags, dateTagged);
 
     }
 

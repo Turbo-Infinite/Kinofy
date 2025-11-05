@@ -17,7 +17,8 @@ public class EmptyStateView extends VBox {
         NO_SEARCH_RESULTS,
         NO_GENRE_RESULTS,
         NO_RATING_RESULTS,
-        FIRST_TIME_USER
+        FIRST_TIME_USER,
+        NO_TIMELINE_DATA
     }
 
     private final EmptyStateType type;
@@ -121,6 +122,16 @@ public class EmptyStateView extends VBox {
                 titleLabel.setText("Welcome to Movie Recommendations!");
                 messageLabel.setText("Get started by adding your favorite movies. The more you add, the better our recommendations become.");
                 actionButton.setText("Add Movies");
+                actionButton.setOnAction(e -> {
+                    if (onActionCallback != null) onActionCallback.run();
+                });
+            }
+
+            case NO_TIMELINE_DATA -> {
+                iconLabel.setText("📊");
+                titleLabel.setText("No Timeline Data Yet");
+                messageLabel.setText("To build your emotional timeline, start by adding emotions to your movies using the 'Edit' button.");
+                actionButton.setText("Back to Movies");
                 actionButton.setOnAction(e -> {
                     if (onActionCallback != null) onActionCallback.run();
                 });

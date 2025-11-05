@@ -34,6 +34,22 @@ public class TmdbApiClient {
         public String name;
     }
 
+    public static class ReviewApiResponse {
+        public List<TmdbReview> results;
+    }
+
+    public static class TmdbReview {
+        public String author;
+        public String content;
+        @SerializedName("author_details")
+        public AuthorDetails authorDetails;
+    }
+
+    public static class AuthorDetails {
+        // TMDB's API includes a rating in author_details
+        public Double rating;
+    }
+
     public void fetchGenres() throws IOException {
         String url = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + API_KEY;
         Request request = new Request.Builder().url(url).build();
@@ -55,6 +71,7 @@ public class TmdbApiClient {
     }
 
     public static class TmdbMovie {
+        public int id;
         public String title;
         @SerializedName("genre_ids")
         public List<Integer> genreIds;
@@ -62,6 +79,25 @@ public class TmdbApiClient {
         public double voteAverage;
         @SerializedName("poster_path")
         public String posterPath;
+    }
+
+    // Inside TmdbApiClient.java
+    public List<TmdbReview> getReviews(int movieId) throws IOException {
+        String url = "https://api.themoviedb.org/3/movie/" + movieId + "/reviews?api_key=" + API_KEY;
+        Request request = new Request.Builder().url(url).build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                throw new IOException("Failed to fetch reviews for ID " + movieId + ": " + response);
+            }
+
+            String json = Objects.requireNonNull(response.body()).string();
+            ReviewApiResponse apiResponse = gson.fromJson(json, ReviewApiResponse.class);
+
+            return (apiResponse != null && apiResponse.results != null)
+                    ? apiResponse.results
+                    : Collections.emptyList();
+        }
     }
 
     public List<TmdbMovie> getMoviesFrom2000Onwards() throws IOException {
@@ -81,6 +117,7 @@ public class TmdbApiClient {
                 }
             }
         }
+
         return allMovies;
     }
 }
